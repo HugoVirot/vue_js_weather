@@ -10,7 +10,7 @@
             <router-link to="/" class="link mx-5  text-white" id="titreNav">Vue JS Weather</router-link>
           </a>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -22,7 +22,7 @@
               </li>
             </ul>
 
-          </div>
+          </div> -->
         </div>
       </nav>
   </header>

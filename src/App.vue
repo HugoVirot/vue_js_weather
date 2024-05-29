@@ -13,14 +13,14 @@ import SearchForm from './components/views/SearchForm.vue';
     <div class="container-fluid" v-if="$route.path == '/'">
       <!-- si la route est / (racine du site) -->
 
-      <img class="pt-3" id="banner" alt="banner" src="./assets/weatherbanner.png" />
-
-      <div id="texts" class="mx-auto">
-        <h1 class="my-5">
-          Vue JS Weather
-        </h1>
-        <p class="fs-4"> Consultez la météo de votre ville et du monde entier
-        </p>
+      <div id="hero" class="d-flex justify-content-center align-items-center">
+        <div class="m-auto">
+          <h1 class="">
+            Vue JS Weather
+          </h1>
+          <p class="fs-4"> Consultez la météo de votre ville et du monde entier
+          </p>
+        </div>
       </div>
 
       <div class="container p-5">
@@ -44,7 +44,7 @@ import SearchForm from './components/views/SearchForm.vue';
   </div>
 </template>
 
-<style>
+<style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Oxygen");
 
 #app {
@@ -63,27 +63,31 @@ import SearchForm from './components/views/SearchForm.vue';
   color: #2c3e50;
 }
 
-#banner {
-  width: 105vw;
-  margin: 0;
-  padding: 0;
-}
-
 .container-fluid {
   padding: 0 !important;
   margin: 0
 }
 
-#texts {
+#hero {
   color: white;
-  position: absolute;
-  top: 30%;
-  left: 35%
+  height: 60vh;
+  background-image: url('./assets/weatherbanner.png');
+  background-position: center;
+  background-size: cover;
+
+  @media screen and (max-width: 768px) {
+    height: 40vh;
+  }
 }
 
 h1 {
   letter-spacing: 1vw;
   font-size: 4rem !important;
+
+  
+  @media screen and (max-width: 768px) {
+    font-size: 3rem !important;
+  }
 }
 
 h2 {
