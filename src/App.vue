@@ -4,6 +4,9 @@ import HeaderNav from "./components/template/HeaderNav.vue"
 import FooterApp from './components/template/FooterApp.vue';
 import CitiesList from './components/views/CitiesList.vue';
 import SearchForm from './components/views/SearchForm.vue';
+
+import { useWeatherStore } from './stores/weatherStore';
+const store = useWeatherStore()
 </script>
 
 <template>
@@ -18,18 +21,20 @@ import SearchForm from './components/views/SearchForm.vue';
           <h1 class="">
             Vue JS Weather
           </h1>
-          <p class="fs-4"> Consultez la météo de votre ville et du monde entier
+          <p class="fs-4"> Consultez la météo de votre ville et du monde entier !
           </p>
         </div>
       </div>
 
       <div class="container p-5">
-        <h2 class="mb-5">Rechercher une ville</h2>
+        <h2 class="mb-4">Rechercher une ville</h2>
         <SearchForm />
       </div>
 
       <div class="container p-5">
-        <h2 class="mb-5">Liste des villes</h2>
+        <h2 class="mb-4">Liste des villes</h2>
+        <button v-if="store.citiesList.length > 0" class="btn btn-danger mb-4" @click="store.$reset">effacer la
+          liste</button>
         <CitiesList />
       </div>
 
@@ -84,7 +89,7 @@ h1 {
   letter-spacing: 1vw;
   font-size: 4rem !important;
 
-  
+
   @media screen and (max-width: 768px) {
     font-size: 3rem !important;
   }

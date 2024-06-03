@@ -19,7 +19,6 @@ const searchCity = async () => {
                         .then(response => {
                                 // on la stocke dans le store
                                 store.storeCityWeather(response.data)
-                                //console.log(store.citiesList);
                         })
                         .catch(error => {
                                 console.log(error)
@@ -32,6 +31,9 @@ const searchCity = async () => {
                                 // le message disparaît au bout de 5 secondes
                                 setTimeout(() => errorMessage.value = '', 5000)
                         })
+
+                // on réinitialise la saisie dans l'input (évite de devoir l'effacer manuellement)
+                search.value = ""
         } else {
                 errorMessage.value = "Nom de ville trop court : merci de saisir au moins 3 caractères."
         }
