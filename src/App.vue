@@ -1,5 +1,4 @@
 <script setup>
-import { RouterView } from 'vue-router'
 import HeaderNav from "./components/template/HeaderNav.vue"
 import FooterApp from './components/template/FooterApp.vue';
 import CitiesList from './components/views/CitiesList.vue';
@@ -13,8 +12,7 @@ const store = useWeatherStore()
   <div id="wrapper">
     <HeaderNav />
 
-    <div class="container-fluid" v-if="$route.path == '/'">
-      <!-- si la route est / (racine du site) -->
+    <div class="container-fluid" >
 
       <div id="hero" class="d-flex justify-content-center align-items-center">
         <div class="m-auto">
@@ -38,11 +36,6 @@ const store = useWeatherStore()
         <CitiesList />
       </div>
 
-    </div>
-
-    <div class="container-fluid" v-else>
-      <!-- si la route est différente de / -->
-      <router-view v-bind:key="$route.fullPath"></router-view>
     </div>
 
     <FooterApp />

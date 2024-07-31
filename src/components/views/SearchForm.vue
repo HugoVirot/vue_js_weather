@@ -10,12 +10,12 @@ const store = useWeatherStore()
 
 axios.defaults.headers.common['Accept'] = 'application/json';
 
-const searchCity = async () => {
+const searchCity = () => {
 
         if (search.value.length > 2) { // on ne lance la recherche qu'à 3 caractères minimum
 
                 // on récupère la météo de la ville
-                await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${search.value}&appid=${apiKey}&lang=fr&units=metric`)
+                axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${search.value}&appid=${apiKey}&lang=fr&units=metric`)
                         .then(response => {
                                 // on la stocke dans le store
                                 store.storeCityWeather(response.data)
